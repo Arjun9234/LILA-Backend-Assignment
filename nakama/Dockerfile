@@ -35,5 +35,5 @@ HEALTHCHECK --interval=10s --timeout=5s --retries=5 \
 
 # Start Nakama with database migrations
 ENTRYPOINT ["/bin/sh", "-ecx", \
-  "/nakama/nakama migrate up --database.address postgres:${POSTGRES_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/nakama && \
-  exec /nakama/nakama --config /nakama/data/nakama-config.yml --database.address postgres:${POSTGRES_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/nakama"]
+  "/nakama/nakama migrate up --database.address postgres://postgres:${POSTGRES_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/nakama && \
+  exec /nakama/nakama --config /nakama/data/nakama-config.yml --database.address postgres://postgres:${POSTGRES_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/nakama"]
