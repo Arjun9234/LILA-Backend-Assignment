@@ -1,0 +1,19 @@
+{
+  "name": "tictactoe-nakama-server",
+  "version": "1.0.0",
+  "description": "Nakama server modules for multiplayer Tic-Tac-Toe",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --outfile=build/index.js --platform=neutral --target=es2020 && node scripts/postbuild-fix.js",
+    "watch": "esbuild src/index.ts --bundle --outfile=build/index.js --platform=neutral --target=es2020 --watch",
+    "clean": "rm -rf build"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
